@@ -1,0 +1,303 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+    background: url('image/bg2.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; /* Allows background to scroll */
+    position: relative;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add an overlay using a pseudo-element */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% visibility */
+    z-index: -1; /* Keeps it behind the content */
+}
+
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #1a1a1a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: gold;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 50px; /* Reduce padding */
+    margin-top: 150px; /* Move section up */
+}
+
+.hero-content {
+    max-width: 500px;
+    transform: translateY(-10px); /* Move text up */
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.tagline {
+    color: #ffcc00;
+    font-size: 20px;
+}
+
+.bio {
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.hero-img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffcc00;
+    transform: translateY(-10px); /* Move profile picture up */
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-img img:hover {
+    transform: scale(1.05);
+}
+
+/* SERVICES */
+/* Ensure "What I Do" (services section) is centered at the division */
+.services {
+    text-align: center;
+    padding: 80px 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards 0.3s;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.card:hover {
+    background: #ffcc00;
+    color: #000;
+    transform: translateY(-10px);
+}
+
+/* WORKS */
+.works {
+    padding: 80px 50px;
+    margin-bottom: 80px; /* Keeps extra space below */
+    text-align: center; /* Centers text horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.work-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.work-item {
+    width: 200px;
+    height: 100px;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+.work-item:hover {
+    background: #ffcc00;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* CONTACT - Fixed Bottom Bar */
+.contact {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(26, 26, 26, 0.95);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #1a1a1a;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Story Sections */
+.story-section {
+    padding: 80px 50px;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.story-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.story-section p, .story-section ul {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.story-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.story-section li {
+    background: #222;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.story-section li:hover {
+    background: #ffcc00;
+    color: black;
+}
